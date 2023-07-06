@@ -1,0 +1,30 @@
+[class^="graphic-effect-"] {
+    display: inline-block;
+    position: relative;
+}
+
+[class^="graphic-effect-"] > img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+    transition: clip-path 500ms ease-in-out;
+    user-select: none;
+    pointer-events: none;
+}
+
+.graphic-effect-underline > img {
+    bottom: -0.25em;
+    height: 0.67em;
+}
+
+.graphic-effect-crossout > img {
+    bottom: 0;
+    height: 100%;
+    width: calc(100% + 1ch);
+}
+
+[class^="graphic-effect-"].draw > img,
+[class^="graphic-effect-"]:hover > img {
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+}
